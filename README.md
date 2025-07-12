@@ -21,21 +21,23 @@ Tech Stack
 
 # Setup Instructions
 1) Clone the repository
-git clone https://github.com/LOGAN8MD/fullstack-react-node-api.git
-cd react-node-api-assignment
+git clone https://github.com/LOGAN8MD/client-React-app-.git
 
-2) Setup & run the backend server
-cd server
-npm install # Install dependencies
-npm run dev # Start server with nodemon for auto-reload
-Backend runs at: http://localhost:8888
-
-3) Setup & run the frontend React app
+2) Setup & run the frontend React app
 Open a new terminal tab/window:
 cd client
 npm install # Install dependencies
 npm start # Run React app
 Frontend runs at: http://localhost:3000
+
+
+3) Setup & run the backend server
+cd server
+npm install # Install dependencies
+npm run dev # Start server with nodemon for auto-reload
+Backend runs at: http://localhost:8888
+
+
 
 
 # Features
