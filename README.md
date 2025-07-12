@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+Full Stack React + Node API Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Objective
+A simple, full-stack application that demonstrates:
+  React frontend with form handling, routing, and Bootstrap styling
+  Node.js + Express backend with in-memory API (POST & GET)
+  Asynchronous data fetching
+  Random dog image for each user using Dog CEO API
+  Clean, responsive, modern UI
 
-## Available Scripts
+Project Structure
+FullStack-React-NodeAPI Assignment/
+  client/ 
+  server/ 
+  README.md
 
-In the project directory, you can run:
+Tech Stack
+  Frontend: React, Bootstrap, Axios, React Router
+  Backend: Node.js, Express.js, CORS, Nodemon (for dev)
+  API: Dog CEO API
 
-### `npm start`
+# Setup Instructions
+1) Clone the repository
+git clone https://github.com/LOGAN8MD/fullstack-react-node-api.git
+cd react-node-api-assignment
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2) Setup & run the backend server
+cd server
+npm install # Install dependencies
+npm run dev # Start server with nodemon for auto-reload
+Backend runs at: http://localhost:8888
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3) Setup & run the frontend React app
+Open a new terminal tab/window:
+cd client
+npm install # Install dependencies
+npm start # Run React app
+Frontend runs at: http://localhost:3000
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Features
 
-### `npm run build`
+Frontend
+User Form Page
+- Input: First Name, Last Name, DOB
+- POST to /api/user to save user data in memory
+- Redirect to Display page on submit
+Display Page
+- GET /api/user to fetch all users
+- Fetch unique random dog image for each user
+- Calculate & display user age from DOB
+- Show details in Bootstrap cards
+- Go Back button to return to the form
+Extra
+- Loading states
+- Basic error handling
+- Form validation
+- Responsive Bootstrap layout
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Backend
+- Express server with CORS enabled
+- Stores submitted user data in memory (simple array)
+- Adds a unique ID to each user based on array length
+- `POST /api/user` saves user data to in-memory array
+- `GET /api/user` returns all saved users
+- No database used — simple and easy for testing/demo
+- Nodemon for live reload during development
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Screenshots
 
-### `npm run eject`
+User Form Page
+(./screenshots/form-page.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+User Form Page with Alert
+(./screenshots/alert-on-form.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Display Page with User Data & Dog Image
+(./screenshots/display-page.png)
