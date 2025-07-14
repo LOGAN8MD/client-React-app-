@@ -7,11 +7,14 @@ export default function DisplayUser() {
   const [dogImage, setDogImage] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+
+  // const url="http://localhost:8888"
+  const url="https://server-node-express-backend.onrender.com"
   
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userRes = await axios.get('http://localhost:8888/api/user');
+        const userRes = await axios.get(`${url}/api/user`);
        
         
         setUser(userRes.data);

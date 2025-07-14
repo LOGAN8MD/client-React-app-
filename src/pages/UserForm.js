@@ -6,6 +6,11 @@ export default function UserForm() {
   const navigate = useNavigate();
   const [form, setForm] = useState({ firstName: '', lastName: '', dob: '' });
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  // const url="http://localhost:8888"
+  const url="https://server-node-express-backend.onrender.com"
+  
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -18,12 +23,17 @@ export default function UserForm() {
       return;
     }
     try {
-      await axios.post('http://localhost:8888/api/user', form);
+      setLoading(true)
+      await axios.post(`${url}/api/user`, form);
+      setLoading(false)
       navigate('/display');
     } catch (err) {
+      setLoading(false)
       setError('Failed to save user.');
     }
   };
+
+  if (loading) return <p className="text-center mt-5">Loading...</p>;
 
   return (
     <div className="container d-flex align-items-center justify-content-center min-vh-100">
